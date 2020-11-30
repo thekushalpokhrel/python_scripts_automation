@@ -1,14 +1,13 @@
 #The parent_directory function returns the name of the directory that's located
 #just above the current working directory. Remember that '..' is a relative path
 #alias that means "go up to the parent directory"
-
+import os
 def parent_directory():
-  # Create a relative path to the parent
-  # of the current working directory
-  dir = os.getcwd()
-  relative_parent = os.path.join("..",dir)
 
+  # Create a relative path to the parent 
+  # of the current working directory 
+  relative_parent = os.path.join(os.getcwd(), os.pardir)
   # Return the absolute path of the parent directory
-  return relative_parent
+  return os.path.abspath(relative_parent)
 
 print(parent_directory())
